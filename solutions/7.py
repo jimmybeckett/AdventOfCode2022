@@ -15,7 +15,7 @@ class Item:
         return cache.setdefault(self.path(), sum(item.size(cache) for _, item in self.contents.items()))
 
     def path(self):
-        return (self.parent_dir.path() + "/" if self.parent_dir else "") + self.name
+        return (self.parent_dir.path() if self.parent_dir else "") + self.name + ("/" if self.parent_dir else "")
 
 
 def make_cache():
@@ -63,5 +63,6 @@ def part_2(cache):
 
 
 cache = make_cache()
+print(cache)
 print(part_1(cache))
 print(part_2(cache))
