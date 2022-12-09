@@ -5,6 +5,7 @@ def max_heights(lst):
     return functools.reduce(lambda res, n: res + [max(n, res[-1]) if res else n], lst, [])
 
 
+
 def horizontal_visible(trees):
     visible = [[False] * len(trees[0]) for _ in trees]
 
