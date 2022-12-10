@@ -1,6 +1,6 @@
 elves = [0]
 
-with open("../data/1.txt") as f:
+with open("../../data/1.txt") as f:
     for line in f:
         if line == '\n':
             elves.append(0)

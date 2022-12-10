@@ -75,7 +75,7 @@ def result_score_2(me):
 
 
 def calculate_score(scoring_function):
-    with open("../data/2.txt") as f:
+    with open("../../data/2.txt") as f:
         return sum(scoring_function(*line.strip().split(" ")) for line in f)
 
 

@@ -2,7 +2,7 @@ import re
 
 
 def solution(reverse):
-    with open("../data/5.txt") as f:
+    with open("../../data/5.txt") as f:
         stacks = []
         for line in f:
             if line[1] == "1":

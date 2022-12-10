@@ -16,7 +16,7 @@ def priority(item):
 
 
 def priorities(split_line, num_lines):
-    with open("../data/3.txt") as f:
+    with open("../../data/3.txt") as f:
         return sum(
             priority(intersection(map(set, compartments)).pop()) for compartments in
             group_compartments(f, split_line, num_lines))

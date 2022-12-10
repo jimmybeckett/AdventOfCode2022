@@ -54,7 +54,7 @@ def part_2(trees):
     return max(scenic_score(trees, r, c) for r in range(len(trees)) for c in range(len(trees[0])))
 
 
-with open("../data/8.txt") as f:
+with open("../../data/8.txt") as f:
     trees = [[int(t) for t in line if t != '\n'] for line in f]
     print(part_1(trees))
     print(part_2(trees))

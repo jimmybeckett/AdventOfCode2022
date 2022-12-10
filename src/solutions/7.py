@@ -19,7 +19,7 @@ class Item:
 
 
 def make_cache():
-    with open("../data/7.txt") as f:
+    with open("../../data/7.txt") as f:
         cd_re = re.compile(r"\$ cd (.+)")
         ls_re = re.compile(r"\$ ls")
         dir_re = re.compile(r"dir (.+)")

@@ -25,7 +25,7 @@ def take_step(head_x, head_y, tail_x, tail_y):
 
 
 def solution(rope_length):
-    with open("../data/9.txt") as f:
+    with open("../../data/9.txt") as f:
         rope = [(0, 0)] * rope_length
         tail_locations = {(0, 0)}
         for line in f:

@@ -10,7 +10,7 @@ def overlap_2(a, b, c, d):
 
 
 def solution(overlap):
-    with open("../data/4.txt") as f:
+    with open("../../data/4.txt") as f:
         prog = re.compile("(\\d+)-(\\d+),(\\d+)-(\\d+)")
         count = 0
         for line in f:
