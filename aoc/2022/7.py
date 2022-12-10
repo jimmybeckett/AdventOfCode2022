@@ -1,4 +1,5 @@
 import re
+import utils
 
 
 # Represents a directory if file_size is None, and a file otherwise
@@ -19,7 +20,7 @@ class Item:
 
 
 def make_cache():
-    with open("../../data/7.txt") as f:
+    with utils.get_input(2022, 7) as f:
         cd_re = re.compile(r"\$ cd (.+)")
         ls_re = re.compile(r"\$ ls")
         dir_re = re.compile(r"dir (.+)")
@@ -63,6 +64,5 @@ def part_2(cache):
 
 
 cache = make_cache()
-print(cache)
 print(part_1(cache))
 print(part_2(cache))

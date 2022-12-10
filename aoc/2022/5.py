@@ -1,8 +1,9 @@
 import re
+import utils
 
 
 def solution(reverse):
-    with open("../../data/5.txt") as f:
+    with utils.get_input(2022, 5) as f:
         stacks = []
         for line in f:
             if line[1] == "1":

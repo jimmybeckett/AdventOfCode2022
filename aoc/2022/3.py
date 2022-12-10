@@ -1,5 +1,6 @@
 from functools import reduce
 from itertools import chain
+import utils
 
 
 def group_compartments(f, split_line, num_lines):
@@ -16,7 +17,7 @@ def priority(item):
 
 
 def priorities(split_line, num_lines):
-    with open("../../data/3.txt") as f:
+    with utils.get_input(2022, 3) as f:
         return sum(
             priority(intersection(map(set, compartments)).pop()) for compartments in
             group_compartments(f, split_line, num_lines))

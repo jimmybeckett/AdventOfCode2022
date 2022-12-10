@@ -1,6 +1,8 @@
+import utils
+
 elves = [0]
 
-with open("../../data/1.txt") as f:
+with utils.get_input(2022, 1) as f:
     for line in f:
         if line == '\n':
             elves.append(0)

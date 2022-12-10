@@ -1,3 +1,6 @@
+import utils
+
+
 def move_head(head_x, head_y, direction):
     match direction:
         case 'R':
@@ -25,7 +28,7 @@ def take_step(head_x, head_y, tail_x, tail_y):
 
 
 def solution(rope_length):
-    with open("../../data/9.txt") as f:
+    with utils.get_input(2022, 9) as f:
         rope = [(0, 0)] * rope_length
         tail_locations = {(0, 0)}
         for line in f:

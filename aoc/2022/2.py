@@ -1,3 +1,6 @@
+import utils
+
+
 def move_score_1(opp, me):
     match opp:
         case "A":
@@ -75,7 +78,7 @@ def result_score_2(me):
 
 
 def calculate_score(scoring_function):
-    with open("../../data/2.txt") as f:
+    with utils.get_input(2022, 2) as f:
         return sum(scoring_function(*line.strip().split(" ")) for line in f)
 
 

@@ -1,8 +1,9 @@
 import re
+import utils
 
 
 def get_signal():
-    with open("../../data/10.txt") as f:
+    with utils.get_input(2022, 10) as f:
         x = 1
         signal = [x]
         instructions = []

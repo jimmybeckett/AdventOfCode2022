@@ -1,4 +1,5 @@
 import re
+import utils
 
 
 def overlap_1(a, b, c, d):
@@ -10,7 +11,7 @@ def overlap_2(a, b, c, d):
 
 
 def solution(overlap):
-    with open("../../data/4.txt") as f:
+    with utils.get_input(2022, 4) as f:
         prog = re.compile("(\\d+)-(\\d+),(\\d+)-(\\d+)")
         count = 0
         for line in f:
