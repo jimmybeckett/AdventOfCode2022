@@ -1,3 +1,4 @@
 .idea/*
 temp/*
 aoc/secrets.py
+aoc/__pycache__/*
