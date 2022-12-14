@@ -10,39 +10,32 @@ def paired_packets():
             f.readline()  # skip newline
 
 
+# returns <0 if left < right, 0 if left == right, >0 if right > left
 def is_ordered(left, right):
     for l, r in zip(left, right):
-        if type(l) is int and type(r) is int:
-            ordered = None if l == r else l < r
-        elif type(l) is list and type(r) is list:
-            ordered = is_ordered(l, r)
-        elif type(l) is list:
-            assert type(r) is int
-            ordered = is_ordered(l, [r])
-        else:
-            assert type(l) is int and type(r) is list
-            ordered = is_ordered([l], r)
-        if ordered is not None:
+        match l, r:
+            case int(), int():
+                ordered = l - r
+            case list(), list():
+                ordered = is_ordered(l, r)
+            case list(), int():
+                ordered = is_ordered(l, [r])
+            case int(), list():
+                ordered = is_ordered([l], r)
+        if ordered:
             return ordered
 
-    return None if len(left) == len(right) else len(left) < len(right)
-
-
-def bubble_sort(lst, comparator):
-    for i in range(len(lst)):
-        for j in range(len(lst) - 1):
-            if not comparator(lst[j], lst[j + 1]):
-                lst[j], lst[j + 1] = lst[j + 1], lst[j]
+    return len(left) - len(right)
 
 
 def part_1():
-    return sum(idx for idx, (left, right) in enumerate(paired_packets(), start=1) if is_ordered(left, right))
+    return sum(idx for idx, (left, right) in enumerate(paired_packets(), start=1) if is_ordered(left, right) < 0)
 
 
 def part_2():
     dividers = [[[2]], [[6]]]
     packets = dividers + [packet for pair in paired_packets() for packet in pair]
-    bubble_sort(packets, is_ordered)
+    packets.sort(key=functools.cmp_to_key(is_ordered))
     return functools.reduce(lambda i, j: (i + 1) * (j + 1), [packets.index(divider) for divider in dividers])
 
 
