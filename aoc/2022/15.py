@@ -2,7 +2,6 @@ import re
 
 from tqdm import tqdm
 
-import utils
 
 
 def get_intervals(sensors, y):
@@ -39,7 +38,7 @@ def possible_x(y, sensors, min_x, max_x):
             x = int_end
 
 
-with utils.get_scratch_input() as f:
+with open('scratch.txt') as f:
     sensors = {}
     for line in f:
         sensor_x, sensor_y, beacon_x, beacon_y = [int(n) for n in re.findall(r'-?\d+', line)]

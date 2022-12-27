@@ -1,3 +1,4 @@
 requests
 gitpython
 tqdm
+py-polynomial
